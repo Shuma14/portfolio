@@ -11,15 +11,15 @@ import Home from './Components/Home.jsx'
 import RootLayout from './Layout/RootLayout.jsx'
 
 const RedirectToResume = () => {
-  // Use window.open to navigate externally without breaking the app
+  
   window.open(
     'https://drive.google.com/file/d/1-V3jbxCuOKgRbtRchSCOkYnWLTPVi9XJ/view', 
     '_blank', 
     'noopener,noreferrer'
   );
 
-  // Optionally navigate to home or another internal route if needed
-  return null; // No need to render anything
+  
+  return null;
 };
 
 const App = () => {
@@ -34,7 +34,8 @@ const router = createBrowserRouter(
         <Route path='resume' element={<Resume/>}/>
         <Route path='contact' element={<Contact/>}/>
     </Route>
-  )
+  ),
+  { basename: "/portfolio" }
 )
   return (
     <RouterProvider router={router}/>

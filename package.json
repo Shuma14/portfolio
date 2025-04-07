@@ -1,5 +1,6 @@
 {
   "name": "react-portfolio",
+  "homepage": "https://Shuma14.github.io/portfolio",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -19,7 +22,6 @@
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.41.0",
     "express": "^4.21.2",
-    "gh-pages": "^6.3.0",
     "pg": "^8.14.1",
     "postgres": "^3.4.5",
     "react": "^19.0.0",
