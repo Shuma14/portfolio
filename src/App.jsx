@@ -19,19 +19,25 @@ const RedirectToResume = () => {
   return null;
 };
 
+const basename = process.env.NODE_ENV === "production" ? "/portfolio" : "/";
+
 const App = () => {
+ 
   return (
-    <HashRouter basename="/portfolio">
-      <RootLayout>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/resume" element={<RedirectToResume />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </RootLayout>
+    
+<HashRouter basename={basename}>
+      <Routes>
+        {/* Parent Route */}
+        <Route path="/" element={<RootLayout />}>
+          {/* Child Routes */}
+          <Route index element={<Home />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="resume" element={<Resume />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
     </HashRouter>
   );
 };
