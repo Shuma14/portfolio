@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar.jsx'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, HashRouter } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, HashRouter, Routes } from 'react-router-dom'
 import Skills from './Components/Skills'
 import Experience from './Components/Experience.jsx'
 import Resume from './Components/Resume.jsx'
