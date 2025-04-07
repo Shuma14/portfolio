@@ -18,7 +18,7 @@ const Projects = () => {
       <li>Smooth page transitions.</li>
       <li>Responsive design for optimal viewing on any device.</li>
     </ul>
-    <a href="#">Github Repository</a>
+    <a href="https://shuma14.github.io/portfolio">Project Link</a>
   </div>
 
   <div className="project-name">
