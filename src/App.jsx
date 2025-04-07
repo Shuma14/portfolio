@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from './Components/Navbar'
 import Sidebar from './Components/Sidebar.jsx'
-import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider,  } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider, HashRouter } from 'react-router-dom'
 import Skills from './Components/Skills'
 import Experience from './Components/Experience.jsx'
 import Resume from './Components/Resume.jsx'
@@ -22,24 +22,25 @@ const RedirectToResume = () => {
   return null;
 };
 
+
+
 const App = () => {
-
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<RootLayout />}>
-         <Route index element={<Home/>}/>
-        <Route path='skills' element={<Skills/>}/>
-        <Route path='projects' element={<Projects/>}/>
-        <Route path='experience' element={<Experience/>}/>
-        <Route path='resume' element={<Resume/>}/>
-        <Route path='contact' element={<Contact/>}/>
-    </Route>
-  ),
-  { basename: "/portfolio" }
-)
   return (
-    <RouterProvider router={router}/>
-  )
-}
+    <HashRouter basename="/portfolio">
+      <Routes>
+        {/* Parent Route */}
+        <Route path="/" element={<RootLayout />}>
+          {/* Child Routes */}
+          <Route index element={<Home />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="experience" element={<Experience />} />
+          <Route path="resume" element={<Resume />} />
+          <Route path="contact" element={<Contact />} />
+        </Route>
+      </Routes>
+    </HashRouter>
+  );
+};
 
-export default App
+export default App;
