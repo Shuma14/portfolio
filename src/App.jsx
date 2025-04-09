@@ -26,7 +26,7 @@ const RedirectToResume = () => {
 
 const App = () => {
   return (
-    <HashRouter basename="/portfolio">
+    <HashRouter>
       <Routes>
         {/* Parent Route */}
         <Route path="/" element={<RootLayout />}>
